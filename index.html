@@ -1,0 +1,477 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Playbook-P1-M18</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 0;
+            color: #333;
+        }
+        .container {
+            max-width: 1000px;
+            margin: auto;
+            padding: 20px;
+        }
+        .header {
+            background-color: #4CAF50;
+            color: white;
+            padding: 10px;
+            text-align: center;
+        }
+        .dropdown {
+            margin-bottom: 20px;
+        }
+        .dropdown select {
+            font-size: 1em;
+            padding: 5px;
+        }
+        .time-title {
+            font-size: 1.2em;
+            font-weight: bold;
+        }
+        .banner {
+            background-color: #4CAF50;
+            color: white;
+            padding: 10px;
+            cursor: pointer;
+            margin-bottom: 10px;
+            font-weight: bold;
+        }
+        .banner .title {
+            font-size: 1.1em;
+            margin-bottom: 5px;
+        }
+        .banner .subtitle {
+            font-size: 0.9em;
+            margin-top: 0;
+            border-top: 1px solid white;
+            padding-top: 5px;
+            color: #e0e0e0;
+        }
+        .content {
+            display: none;
+            padding: 10px;
+            border: 1px solid #ddd;
+            margin-bottom: 10px;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+        th, td {
+            padding: 10px;
+            border: 1px solid #ddd;
+            text-align: left;
+        }
+    </style>
+    <script>
+        function updateActivities() {
+            const selectedTime = document.getElementById('class-time').value;
+            const activity2 = document.getElementById('activity-2');
+            const teamGniusStep6 = document.getElementById('team-gnius-step-6');
+            const teamGniusStep7 = document.getElementById('team-gnius-step-7');
+
+            if (selectedTime === '45') {
+                activity2.style.display = 'none';
+            } else if (selectedTime === '40') {
+                activity2.style.display = 'none';
+                teamGniusStep6.style.display = 'none';
+                teamGniusStep7.style.display = 'none';
+            } else {
+                activity2.style.display = 'block';
+                teamGniusStep6.style.display = 'block';
+                teamGniusStep7.style.display = 'block';
+            }
+
+            document.getElementById('selected-time').innerText = `Tiempo efectivo de clase: ${selectedTime} minutos`;
+        }
+
+        function toggleContent(id) {
+            const content = document.getElementById(id);
+            content.style.display = content.style.display === "none" ? "block" : "none";
+        }
+    </script>
+</head>
+<body>
+    <div class="header">
+        <h1>Playbook-P1-M18</h1>
+    </div>
+    <div class="container">
+        <div class="dropdown">
+            <label for="class-time">Tiempo efectivo de Clase:</label>
+            <select id="class-time" onchange="updateActivities()">
+                <option value="50">50 minutos</option>
+                <option value="45">45 minutos</option>
+                <option value="40">40 minutos</option>
+            </select>
+        </div>
+
+        <h2 id="selected-time" class="time-title">Tiempo efectivo de clase: 50 minutos</h2>
+<!-- Actividad 0 -->
+<div id="activity-0" class="activity">
+    <div class="banner" onclick="toggleContent('revision_mision')">
+        <div class="title">🔍 Actividad 0: Revisión de Misión</div>
+        <div class="subtitle">Verificación inicial del equipo y materiales necesarios.</div>
+    </div>
+    <div id="revision_mision" class="content">
+        <table>
+            <tr>
+                <th>Acción</th>
+                <th>Diálogo Sugerido</th>
+            </tr>
+            <tr>
+                <td>
+                    <strong>Paso 1:</strong> Proyectar la diapositiva 1 "Revisión de Misión" y verificar que:
+                    <ul>
+                        <li>Los dispositivos están encendidos y tienen acceso a Scratch Jr.</li>
+                        <li>Las Magic Tablets, sets de 6 bloques de Lego por alumno están listos.</li>
+                        <li>El espacio de trabajo está organizado.</li>
+                    </ul>
+                </td>
+                <td>No aplica</td>
+            </tr>
+        </table>
+    </div>
+</div>
+<!-- Actividad 1 -->
+<div id="activity-1" class="activity">
+    <div class="banner" onclick="toggleContent('saludo_ritual')">
+        <div class="title">🎉 Actividad 1: Saludo y Ritual Gnius Club ⏰ Tiempo: 2.5 minutos</div>
+        <div class="subtitle">Bienvenida al grupo y presentación de los objetivos del día.</div>
+    </div>
+    <div id="saludo_ritual" class="content">
+        <table>
+            <tr>
+                <th>Acción</th>
+                <th>Diálogo Sugerido</th>
+            </tr>
+            <tr>
+                <td>
+                    <strong>Paso 1 (0.5 minutos):</strong> Proyectar la diapositiva 2 "¡Bienvenidos, Genios Espaciales!". Saludar a los estudiantes con entusiasmo y energía.
+                </td>
+                <td>
+                    "¡Hola, Genios! 🚀 Bienvenidos a una nueva aventura en el espacio. Hoy seremos exploradores espaciales y viajaremos a planetas lejanos, creando historias increíbles. ¿Están listos para despegar? ¡Vamos a encender nuestros motores de creatividad!"
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <strong>Paso 2 (1 minuto):</strong> Proyectar la diapositiva 3 "¿Cómo se sienten hoy, astronautas?". Mostrar opciones visuales de poses temáticas (Cuenta Regresiva y Flotando en el Espacio). Pedir que representen cómo se sienten usando estas poses.
+                </td>
+                <td>
+                    "¡Genios! Muéstrenme cómo se sienten hoy: 
+                    <br>- Si están emocionados y listos para despegar, hagan la Pose de Cuenta Regresiva (manos al frente como si estuvieran en el tablero de un cohete). 
+                    <br>- Si están relajados y soñadores como si flotaran en el espacio, hagan la Pose de Flotación (abran los brazos y simulen flotar). 
+                    <br>¡Muéstrenme sus poses!"
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <strong>Paso 3 (0.5 minutos):</strong> Proyectar la diapositiva 4 "Ritual de Agradecimiento Espacial". Guiar a los estudiantes para realizar el ritual en conjunto.
+                </td>
+                <td>
+                    "Ahora todos juntos, juntemos nuestras manos y digamos: '¡Gracias por estar aquí, Genios Espaciales! Hoy exploraremos, aprenderemos y crearemos algo fuera de este mundo. ¡Listos para despegar!' 🚀"
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <strong>Paso 4 (0.5 minutos):</strong> Proyectar la diapositiva 5 "Objetivos de la Misión Espacial". Enumerar los objetivos de la misión en un formato claro y motivador.
+                </td>
+                <td>
+                    "Hoy tenemos una misión estelar, Genios:
+                    <br><br><strong>1.</strong> Usar bloques de movimiento y apariencia para animar aventuras espaciales.
+                    <br><br><strong>2.</strong> Crear escenas donde los astronautas exploren planetas únicos.
+                    <br><br><strong>3.</strong> Compartir nuestras historias galácticas y reflexionar juntos.
+                    <br><br>¡Será un día fuera de este mundo!"
+                </td>
+            </tr>
+        </table>
+    </div>
+</div>
+<!-- Actividad 2 -->
+<div id="activity-2" class="activity">
+    <div class="banner" onclick="toggleContent('brain_vitamin')">
+        <div class="title">🧠 Actividad 2: Brain Vitamin ⏰ Tiempo: 4 minutos</div>
+        <div class="subtitle">Actividad creativa para activar la mente y construir habilidades motoras.</div>
+    </div>
+    <div id="brain_vitamin" class="content">
+        <table>
+            <tr>
+                <th>Acción</th>
+                <th>Diálogo Sugerido</th>
+            </tr>
+            <tr>
+                <td>
+                    <strong>Paso 1 (0.5 minutos):</strong> Proyectar la diapositiva 6 "Construyendo un Satélite Espacial". Introducir brevemente la idea de construir un satélite utilizando los bloques de Lego.
+                </td>
+                <td>
+                    "¡Astronautas, prepárense para construir! 🛰️ Vamos a usar nuestros bloques para diseñar un satélite espacial que pueda enviar señales desde el espacio. Esta actividad activará su creatividad y habilidades para la misión."
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <strong>Paso 2 (1.5 minutos):</strong> Guiar a los estudiantes para que utilicen sus bloques para construir un "satélite" siguiendo las instrucciones:
+                    <ul>
+                        <li>Crear un cubo estable usando los seis bloques.</li>
+                        <li>Agregar detalles como "antenas" con ideas creativas.</li>
+                        <li>Experimentar con sostenerlo detrás de la espalda o sobre la cabeza para simular condiciones espaciales.</li>
+                    </ul>
+                </td>
+                <td>
+                    "¡Es hora de construir! Usen sus seis bloques para crear un satélite estable. 
+                    <br>- Primero, formen un cubo básico. 
+                    <br>- Luego, agreguen detalles como antenas usando su imaginación. 
+                    <br>- Por último, sostengan su satélite detrás de la espalda o sobre su cabeza para simular cómo se comporta en el espacio. 
+                    <br>¡Manos a la obra, astronautas!"
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <strong>Paso 3 (2 minutos):</strong> Pedir a los estudiantes que caminen lentamente alrededor del aula mientras sostienen su satélite. Integrar movimientos espaciales, como girar sobre sí mismos o agacharse, para simular maniobras en gravedad cero.
+                </td>
+                <td>
+                    "¡Despleguemos nuestros satélites en el espacio! Caminen alrededor del aula como si estuvieran en gravedad cero, llevando su satélite. Giren, agáchense, y vuelvan a levantarse mientras mantienen su satélite seguro. 
+                    <br>¡Cuidado con las tormentas cósmicas!"
+                </td>
+            </tr>
+        </table>
+    </div>
+</div>
+<!-- Actividad 3 -->
+<div id="activity-3" class="activity">
+    <div class="banner" onclick="toggleContent('challenge')">
+        <div class="title">🚀 Actividad 3: Challenge ⏰ Tiempo: 25 minutos</div>
+        <div class="subtitle">Resolución de retos espaciales en Scratch Jr.</div>
+    </div>
+    <div id="challenge" class="content">
+        <table>
+            <tr>
+                <th>Acción</th>
+                <th>Diálogo Sugerido</th>
+            </tr>
+            <tr>
+                <td>
+                    <strong>Paso 1 (0.5 minutos):</strong> Proyectar la diapositiva 9 "¡Hora del Desafío Espacial!". Explicar a los estudiantes que trabajarán en retos relacionados con movimientos y animaciones espaciales en Scratch Jr.
+                </td>
+                <td>
+                    "¡Astronautas, llegó el momento más emocionante! 🚀 Hoy vamos a programar misiones espaciales increíbles. Tenemos tres niveles de desafío: Rookie, Master y Hacker. ¡Elijan el que más los inspire y prepárense para explorar el espacio como nunca antes!"
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <strong>Paso 2 (2 minutos):</strong> Proyectar la diapositiva 10A "Usando Escenas en Scratch Jr.". Explicar cómo crear, modificar y conectar escenas en sus proyectos.
+                </td>
+                <td>
+                    "Antes de comenzar, recordemos algo muy importante: ¡las escenas! 🌌 En Scratch Jr., las escenas son como capítulos de un libro. 
+                    <br>- Para añadir una nueva escena, toca el botón de 'Más' en la barra inferior. 
+                    <br>- Para cambiar entre escenas, utiliza las flechas en la parte superior. 
+                    <br>- Cada escena puede tener un fondo y programación únicos. 
+                    <br>¡Úsenlas para crear su historia galáctica!"
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <strong>Paso 3 (2 minutos):</strong> Proyectar la diapositiva 10B "Niveles del Desafío". Explicar claramente los objetivos, instrucciones, condiciones, y un consejo útil para cada nivel.
+                </td>
+                <td>
+                    <strong>Rookie:</strong>
+                    <br><br>
+                    <strong>Objetivo:</strong> Programar al astronauta para llegar al planeta y reproducir un sonido único.
+                    <br><br>
+                    <strong>Instrucciones:</strong> Elige un fondo de espacio, programa el movimiento del astronauta en línea recta desde la nave hasta el planeta, y haz que suene al llegar.
+                    <br><br>
+                    <strong>Consejo:</strong> Usa la vista previa para ajustar el movimiento con precisión.
+                    <br><br>
+                    <strong>Master:</strong>
+                    <br><br>
+                    <strong>Objetivo:</strong> Programar al astronauta para explorar tres planetas y emitir sonidos diferentes en cada uno.
+                    <br><br>
+                    <strong>Instrucciones:</strong> Crea tres escenas diferentes, programa movimientos únicos para cada planeta, y conecta los sonidos de llegada.
+                    <br><br>
+                    <strong>Consejo:</strong> Trabaja cada escena por separado antes de unirlas en la misión completa.
+                    <br><br>
+                    <strong>Hacker:</strong>
+                    <br><br>
+                    <strong>Objetivo:</strong> Diseñar un recorrido completo por cuatro planetas, incluyendo trayectorias avanzadas y sonidos sincronizados.
+                    <br><br>
+                    <strong>Instrucciones:</strong> Crea cuatro escenas, programa movimientos complejos (zigzag, saltos) para explorar cada planeta, y sincroniza sonidos al llegar.
+                    <br><br>
+                    <strong>Consejo:</strong> Divide el proyecto en etapas y asegúrate de que cada etapa esté perfecta antes de conectarlas.
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <strong>Paso 4 (20 minutos):</strong> Proyectar la diapositiva 11 "Manos a la Obra". Supervisar a los estudiantes mientras trabajan, ayudándolos a cumplir las condiciones y resolver dudas.
+                </td>
+                <td>
+                    "¡Es hora de crear, astronautas! 🚀 Elijan su nivel: 
+                    <br>- <strong>Rookie:</strong> Navegar de la nave al planeta. 
+                    <br>- <strong>Master:</strong> Explorar tres planetas únicos. 
+                    <br>- <strong>Hacker:</strong> Diseñar una misión completa por el sistema solar. 
+                    <br>¡Demuestren su creatividad y habilidades!"
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <strong>Paso 5 (2 minutos):</strong> Proyectar la diapositiva 12 "Reflexionemos Juntos". Facilitar que los estudiantes muestren sus proyectos y expliquen cómo lograron cumplir con las condiciones de cada nivel.
+                </td>
+                <td>
+                    "¡Genios, qué increíble trabajo! 🌟 Ahora compartamos nuestras creaciones: 
+                    <br>- <strong>Rookie:</strong> ¿Cómo lograron el movimiento y el sonido al aterrizar? 
+                    <br>- <strong>Master:</strong> ¿Qué planetas exploraron y qué sonidos usaron? 
+                    <br>- <strong>Hacker:</strong> ¿Cómo sincronizaron los movimientos y sonidos en su recorrido completo? 
+                    <br>¡Inspírense unos a otros!"
+                </td>
+            </tr>
+        </table>
+    </div>
+</div>
+<!-- Actividad 4 -->
+<div id="activity-4" class="activity">
+    <div class="banner" onclick="toggleContent('team_gnius')">
+        <div class="title">🤝 Actividad 4: Team Gnius ⏰ Tiempo: 10 minutos</div>
+        <div class="subtitle">Trabajo en equipo para evaluar y mejorar los proyectos espaciales.</div>
+    </div>
+    <div id="team_gnius" class="content">
+        <table>
+            <tr>
+                <th>Acción</th>
+                <th>Diálogo Sugerido</th>
+            </tr>
+            <tr>
+                <td>
+                    <strong>Paso 1 (0.5 minutos):</strong> Proyectar la diapositiva 13 "Formación de Equipos Espaciales". Pedir a los estudiantes que formen equipos con compañeros cercanos para realizar la actividad.
+                </td>
+                <td>
+                    "¡Es hora de unir fuerzas, Genios Espaciales! 🌌 Formen equipos de 2 o 3 con los compañeros más cercanos. Estos serán sus compañeros de misión para explorar, mejorar y aprender juntos. ¡Vamos a despegar en equipo!"
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <strong>Paso 2 (0.5 minutos):</strong> Proyectar la diapositiva 15 "Preparando Herramientas Espaciales". Pedir a los estudiantes que recojan sus Magic Tablets o cualquier otro material necesario del área asignada.
+                </td>
+                <td>
+                    "¡Astronautas, recojan sus herramientas mágicas! 🌟 Cada equipo necesitará Magic Tablets o cualquier otro recurso disponible para tomar notas y trabajar juntos. ¡Tienen 30 segundos para prepararse!"
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <strong>Paso 3 (1.5 minutos):</strong> Proyectar la diapositiva 14 "Organización de Equipos". Usar un temporizador de 90 segundos para que los estudiantes encuentren compañeros y se organicen.
+                </td>
+                <td>
+                    "Tienen 90 segundos para organizarse como equipo: 
+                    <br>- Elijan un Líder de Nave que coordine. 
+                    <br>- Un Explorador que revise los detalles de los proyectos. 
+                    <br>- Y un Comandante Creativo que proponga ideas geniales. 
+                    <br>¡Recuerden que todos son importantes para la misión!"
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <strong>Paso 4 (2 minutos):</strong> Proyectar la diapositiva 16 "Revisión Espacial". Pedir a los estudiantes que observen los proyectos de sus compañeros y respondan a preguntas clave para proporcionar retroalimentación.
+                </td>
+                <td>
+                    "¡Es hora de explorar los proyectos de otros astronautas! 🌟 Observen con atención y respondan estas preguntas: 
+                    <br>- ¿Qué les gustó más de su proyecto? 
+                    <br>- ¿Qué pueden mejorar para que sea aún más increíble? 
+                    <br>- ¿Qué aprendieron de su equipo? 
+                    <br>¡Den retroalimentación con respeto y curiosidad!"
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <strong>Paso 5 (3 minutos):</strong> Proyectar la diapositiva 17 "Turno de Maestro Espacial". Pedir a los estudiantes que se turnen para explicar sus proyectos y recibir preguntas.
+                </td>
+                <td>
+                    "¡Genios, ahora cada uno será un Maestro Espacial! 🌌 Por turnos, expliquen a su equipo cómo crearon sus proyectos: 
+                    <br>- Qué movimientos y sonidos usaron. 
+                    <br>- Qué desafíos encontraron. 
+                    <br>- Y qué los hace únicos. 
+                    <br>El resto del equipo hará preguntas para aprender más. ¡Luego cambien de rol!"
+                </td>
+            </tr>
+            <tr id="team-gnius-step-6">
+                <td>
+                    <strong>Paso 6 (3 minutos):</strong> Proyectar la diapositiva 18 "Ajustes en Equipo". Dar tiempo a los equipos para trabajar juntos en los ajustes sugeridos durante la revisión.
+                </td>
+                <td>
+                    "¡Ahora, astronautas, es momento de mejorar! 🚀 Tomen las ideas que compartieron y hagan ajustes en sus proyectos. Recuerden, cada pequeño cambio puede hacer la diferencia. ¡Trabajen juntos para brillar aún más!"
+                </td>
+            </tr>
+            <tr id="team-gnius-step-7">
+                <td>
+                    <strong>Paso 7 (2 minutos):</strong> Proyectar la diapositiva 19 "Reflexión en Equipo". Facilitar preguntas como: 
+                    <br>- ¿Qué aprendieron de trabajar juntos? 
+                    <br>- ¿Cómo mejoraron sus proyectos gracias a sus compañeros? 
+                    <br>- ¿Qué fue lo más divertido?
+                </td>
+                <td>
+                    "¡Genios, reflexionemos sobre nuestra misión! 🚀 
+                    <br>- ¿Qué aprendieron trabajando juntos? 
+                    <br>- ¿Cómo mejoraron sus proyectos gracias a sus compañeros? 
+                    <br>- ¿Qué fue lo más divertido de esta misión? 
+                    <br>¡El aprendizaje compartido es el mejor!"
+                </td>
+            </tr>
+        </table>
+    </div>
+</div>
+<!-- Actividad 5 -->
+<div id="activity-5" class="activity">
+    <div class="banner" onclick="toggleContent('honor_lab')">
+        <div class="title">🏅 Actividad 5: Honor the Lab ⏰ Tiempo: 4.5 minutos</div>
+        <div class="subtitle">Reflexión final y organización del espacio de trabajo.</div>
+    </div>
+    <div id="honor_lab" class="content">
+        <table>
+            <tr>
+                <th>Acción</th>
+                <th>Diálogo Sugerido</th>
+            </tr>
+            <tr>
+                <td>
+                    <strong>Paso 1 (0.5 minutos):</strong> Proyectar la diapositiva 20 "Revisión de Objetivos". Guiar a los estudiantes en una breve reflexión grupal sobre lo aprendido y logrado durante la clase.
+                </td>
+                <td>
+                    "¡Genios Espaciales, qué trabajo increíble hicieron hoy! 🚀 Reflexionemos juntos: 
+                    <br>- ¿Logramos nuestros objetivos? 
+                    <br>Sí, programamos movimientos y sonidos, exploramos planetas y trabajamos en equipo. 
+                    <br>¡Todo gracias a su esfuerzo y creatividad! 🌟"
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <strong>Paso 2 (1 minuto):</strong> Realizar el reconocimiento de logros mediante un mensaje verbal motivador.
+                </td>
+                <td>
+                    "¡Felicitaciones, Genios! 🌟 Hoy han explorado el espacio con creatividad y valentía. 
+                    <br>Cada planeta que visitaron y cada historia que crearon es un testimonio de su genialidad. 
+                    <br>Recuerden: ¡ustedes tienen el poder de crear mundos enteros! 
+                    <br>¡Nos vemos en nuestra próxima misión!"
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <strong>Paso 3 (3 minutos):</strong> Proyectar la diapositiva 21 "Organización del Espacio". Pedir a los estudiantes que devuelvan los materiales (Magic Tablets, bloques de Lego, etc.) a su lugar correspondiente. Supervisar mientras lo hacen.
+                </td>
+                <td>
+                    "Astronautas, antes de regresar a la base, necesitamos dejar nuestro laboratorio listo para la próxima misión. 🌌 
+                    <br>Por favor, devuelvan las Magic Tablets, bloques y cualquier otro material que usaron. 
+                    <br>Recuerden, ¡un espacio limpio es parte del éxito! 🚀"
+                </td>
+            </tr>
+        </table>
+    </div>
+</div>
+    </div> <!-- Cierre del container -->
+
+    <!-- Scripts adicionales -->
+    <script>
+        // Espacio para agregar scripts adicionales si son necesarios
+    </script>
+</body>
+</html>
